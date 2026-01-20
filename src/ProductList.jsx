@@ -218,7 +218,7 @@ function ProductList({ onHomeClick }) {
         padding: '15px',
         display: 'flex',
         justifyContent: 'space-between',
-        alignIems: 'center',
+        alignItems: 'center',
         fontSize: '20px',
     }
     const styleObjUl = {
@@ -274,7 +274,31 @@ function ProductList({ onHomeClick }) {
             </div>
             {!showCart ? (
                 <div className="product-grid">
+{plantsArray.map(group => (
+  <div className="category" key={group.category}>
+    <h1>{group.category}</h1>
 
+    <div className="product-list"> 
+      {group.plants.map(plant => (
+        <div className="product-card" key={plant.name}>
+       <div className="product-title">{plant.name}</div>
+        <img 
+            className="product-image" 
+            src={plant.image} 
+            alt={plant.name} 
+          />
+    <div className="product-description">{plant.description}</div>
+    <div className="product-cost">{plant.cost}</div>
+    <button
+    className="product-button"
+    onClick={() => handleAddToCart(plant)}>
+    Add to Cart
+    </button>
+        </div>
+      ))}
+    </div>
+  </div>
+))}
 
                 </div>
             ) : (
