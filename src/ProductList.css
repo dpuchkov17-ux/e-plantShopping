@@ -205,3 +205,14 @@ body {
 .product-button:disabled:hover {
   background-color: #9e9e9e;
 }
+
+.navbar-logo-link {
+  text-decoration: none;   /* ❌ убираем underline */
+  color: inherit;
+}
+
+.navbar-logo-link:hover,
+.navbar-logo-link:visited,
+.navbar-logo-link:active {
+  text-decoration: none;   /* ❌ нигде не появляется */
+}
