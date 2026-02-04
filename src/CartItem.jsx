@@ -54,8 +54,8 @@ return total
 
   return (
     <div className="cart-container">
-      <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalAmount()}</h2>
-      <div >
+      <div className="total_cart_amount">Total Cart Amount: ${calculateTotalAmount()}</div>
+      <div className="cart-items" >
         {cart.map(item => (
           <div className="cart-item" key={item.name}>
             <img className="cart-item-image" src={item.image} alt={item.name} />
